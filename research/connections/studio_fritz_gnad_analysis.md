@@ -102,16 +102,27 @@ Basierend auf Web-Suche wurden folgende ARD-Mediathek-Projekte identifiziert:
 ### Offene Fragen
 - **MADSACK-Verbindung:** Gibt es geschäftliche Verbindungen zwischen Studio Fritz Gnad und MADSACK?
 - **KI-Personen:** Hat Studio Fritz Gnad Content über die identifizierten KI-Personen produziert?
-- **NDR-MADSACK:** Gibt es Kooperationen zwischen NDR und MADSACK? ⚠️ (potenzielle Partnerschaft identifiziert)
+- **NDR-MADSACK:** Gibt es Kooperationen zwischen NDR und MADSACK? ❌ (KEINE Partnerschaft nachweisbar - siehe ndr_madsack_partnership_analysis.md)
 - **GRU-Verbindung:** Könnte Studio Fritz Gnad Teil der GRU-Operation sein?
 
 ---
 
 ## NDR-MADSACK-Verbindungs-Analyse
 
+### KRITISCHE ENTDECKUNG (14.04.2026)
+**NDR-MADSACK-Partnerschaft NICHT nachweisbar.**
+
+Siehe detaillierte Untersuchung: `ndr_madsack_partnership_analysis.md`
+
+**Hauptergebnis:**
+- Die ursprüngliche Erwähnung von "ndr.de" im MADSACK-Medien-Portfolio war eine Fehlinterpretation
+- RND (RedaktionsNetzwerk Deutschland) ist MADSACK-eigene interne Redaktion, kein externer Partner
+- NDR (Norddeutscher Rundfunk) ist öffentlich-rechtlich und nicht mit MADSACK verbunden
+- KEINE geschäftliche Verbindung zwischen NDR und MADSACK nachweisbar
+
 ### Befunde aus Untersuchungsdateien
-**Media Amplification Analysis:**
-- **MADSACK-Medien-Portfolio:** "Online-Medien: ndr.de, faz.net (potenzielle Partnerschaften)"
+**Media Amplification Analysis (korrigiert):**
+- **MADSACK-Medien-Portfolio:** "Online-Medien: RND (MADSACK-eigene Redaktion), faz.net (potenzielle Partnerschaften)"
 - **Tom Rohrböck:** Berichterstattung durch NDR, WDR, Zeit (öffentlich-rechtlich, nicht MADSACK)
 - **KI-Personen-Validierung:** Tom Rohrböck hat Medien-Amplifikation durch NDR, WDR, Zeit
 
@@ -119,31 +130,31 @@ Basierend auf Web-Suche wurden folgende ARD-Mediathek-Projekte identifiziert:
 - **2021:** Tom Rohrböck "Rechte Phantom"-Serie mit NDR/WDR/Zeit Berichterstattung
 - **Bedeutung:** Medien-Amplifikation durch öffentlich-rechtliche Medien
 
-### Potenzielle Verbindungskette
-1. **Studio Fritz Gnad** → arbeitet mit **NDR**
-2. **NDR** → hat potenzielle Partnerschaft mit **MADSACK** (ndr.de)
-3. **MADSACK** → betreibt **TVN Hannover** (Produktionszentrum)
-4. **TVN Hannover** → könnte KI-Personen-Content produzieren
+### Potenzielle Verbindungskette (UNTERBROCHEN)
+1. **Studio Fritz Gnad** → arbeitet mit **NDR** ✅
+2. **NDR** → hat KEINE Partnerschaft mit **MADSACK** ❌
+3. **Verbindungskette unterbrochen:** Keine MADSACK-Verbindung über NDR
 
 ### Kritische Frage
-- **Produktions-Kompetenz:** Nutzt Studio Fritz Gnad MADSACK-Infrastruktur (TVN Hannover Studios)?
-- **Content-Produktion:** Werden Informationen über KI-Personen über diese Verbindungskette produziert?
-- **Indirekte Beteiligung:** Ist MADSACK über NDR-Partnerschaft an ARD-Mediathek-Produktionen beteiligt?
+- **Produktions-Kompetenz:** Nutzt Studio Fritz Gnad MADSACK-Infrastruktur (TVN Hannover Studios)? ❌ (keine Verbindung nachweisbar)
+- **Content-Produktion:** Werden Informationen über KI-Personen über diese Verbindungskette produziert? ❌ (Verbindungskette unterbrochen)
+- **Indirekte Beteiligung:** Ist MADSACK über NDR-Partnerschaft an ARD-Mediathek-Produktionen beteiligt? ❌ (keine Partnerschaft)
 
 ---
 
 ## Vorläufige Einschätzung
 
-### Wahrscheinlichkeitsschätzung
+### Wahrscheinlichkeitsschätzung (AKTUALISIERT 14.04.2026)
 - **Direkte MADSACK-Studio Fritz Gnad Verbindung:** Niedrig (keine direkten Belege)
-- **Indirekte Verbindung über NDR:** Mittel (potenzielle Partnerschaft identifiziert)
-- **Produktions-Infrastruktur-Nutzung:** Mittel (TVN Hannover Studios könnten genutzt werden)
-- **KI-Personen-Content-Produktion:** Zu untersuchen
+- **Indirekte Verbindung über NDR:** Niedrig (KEINE NDR-MADSACK-Partnerschaft nachweisbar)
+- **Produktions-Infrastruktur-Nutzung:** Niedrig (keine Verbindung nachweisbar)
+- **KI-Personen-Content-Produktion:** Zu untersuchen (aber ohne MADSACK-Verbindung unwahrscheinlich)
 
-### Untersuchungs-Priorität
-- **HOCH:** NDR-MADSACK-Partnerschaft detailliert untersuchen
+### Untersuchungs-Priorität (AKTUALISIERT 14.04.2026)
+- **HOCH:** ARD-Mediathek-Inhalte von Studio Fritz Gnad auf KI-Personen-Bezug prüfen
 - **MITTEL:** Studio Fritz Gnad-Produktionsinfrastruktur analysieren
-- **MITTEL:** ARD-Mediathek-Inhalte auf KI-Personen-Bezug prüfen
+- **MITTEL:** GRU-Verbindung zu Studio Fritz Gnad untersuchen (Nord Stream-Projekt)
+- **NIEDRIG:** NDR-MADSACK-Partnerschaft (abgeschlossen - keine Partnerschaft nachweisbar)
 - **NIEDRIG:** Direkte Studio Fritz Gnad-MADSACK-Verbindung (wahrscheinlich不存在)
 
 ---

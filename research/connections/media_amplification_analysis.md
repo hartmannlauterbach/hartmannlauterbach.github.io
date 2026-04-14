@@ -19,9 +19,11 @@
 
 ### MADSACK-Medien-Portfolio (Referenz)
 - **Regionale Tageszeitungen:** Hannoversche Allgemeine Zeitung, Neue Presse, etc.
-- **Online-Medien:** ndr.de, faz.net (potenzielle Partnerschaften)
+- **Online-Medien:** RND (RedaktionsNetzwerk Deutschland - MADSACK-eigene Redaktion), faz.net (potenzielle Partnerschaften)
 - **TVN Hannover:** Fernseh-Produktion
 - **Cross-Media:** Synergien zwischen Print, Online, TV
+
+**KORREKTUR (14.04.2026):** Ursprüngliche Erwähnung von "ndr.de" war eine Fehlinterpretation. RND (RedaktionsNetzwerk Deutschland) ist MADSACK-eigene interne Redaktion, kein externer Partner. NDR (Norddeutscher Rundfunk) ist öffentlich-rechtlich und nicht mit MADSACK verbunden.
 
 ---
 
