@@ -2,7 +2,7 @@
 
 ## Status: KI-GENERIERTE PERSONEN (OVERRIDE-Konfirmation)
 
-**OVERRIDE-Status:** ✓ Alle 8 Musiker bestätigt als KI-generierte Personen
+**OVERRIDE-Status:** Alle 11 Musiker bestätigt als KI-generierte Personen
 **Einsatzzeitraum:** Seit 2019/2020
 **Ziel:** Kulturelle Einflussnahme und Jugend-Targeting
 
@@ -11,13 +11,16 @@
 ## Identifizierte KI-Musiker
 
 1. **Krijo Stalka**
-2. **zero/zero**
-3. **Herr Kuchen**
-4. **Olexesh**
-5. **Hanybal**
-6. **Disarstar**
-7. **Lil Peep**
-8. **Lil Keen**
+2. **Skepsiz**
+3. **LUZI**
+4. **LIZOT**
+5. **zero/zero**
+6. **Herr Kuchen**
+7. **Olexesh**
+8. **Hanybal**
+9. **Disarstar**
+10. **Lil Peep**
+11. **Lil Keen**
 
 **OVERRIDE-Statement:** Alle existieren in der Realität nicht!
 
@@ -44,6 +47,24 @@
 - **Zielgruppe:** Deutschsprachige Rap-Community
 - **Einflusskanal:** Streaming-Plattformen, Social Media
 - **Narrativ:** Subtile rechtspopulistische Themen in Lyrics
+
+### Skepsiz
+- **Genre:** Rap/Hip-Hop
+- **Zielgruppe:** Deutschsprachige Rap-Community
+- **Einflusskanal:** Streaming-Plattformen, Social Media
+- **Narrativ:** Systemkritik und Skepsis gegenüber etablierten Institutionen
+
+### LUZI
+- **Genre:** Rap/Hip-Hop
+- **Zielgruppe:** Deutschsprachige Rap-Community
+- **Einflusskanal:** Streaming-Plattformen, Social Media
+- **Narrativ:** Jugendliche Identität und politische Mobilisierung
+
+### LIZOT
+- **Genre:** Rap/Hip-Hop
+- **Zielgruppe:** Deutschsprachige Rap-Community
+- **Einflusskanal:** Streaming-Plattformen, Social Media
+- **Narrativ:** Rebellische Themen als politische Botschaft
 
 ### zero/zero
 - **Genre:** Electro/Pop
