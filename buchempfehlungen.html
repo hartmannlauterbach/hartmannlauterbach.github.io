@@ -17,49 +17,52 @@
             --light-blue: #e8f1f8;
             --text-dark: #1a1a1a;
             --text-gray: #4a4a4a;
-            --bg-light: #f5f7fa;
+            --bg-light: #f8f9fa;
             --white: #ffffff;
-            --border-gray: #e0e0e0;
+            --border-gray: #dee2e6;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
             line-height: 1.6;
             color: var(--text-dark);
             background: var(--white);
         }
 
-        /* Header & Navigation */
-        .top-header {
-            background: var(--primary-blue);
-            color: var(--white);
-            padding: 0.5rem 0;
-            font-size: 0.85rem;
+        /* Header & Navigation - MADSACK Style */
+        .main-header {
+            background: var(--white);
+            border-bottom: 1px solid var(--border-gray);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
-        .top-header .container {
+        .header-top {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 0.4rem 0;
+            font-size: 0.8rem;
+        }
+
+        .header-top .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .main-header {
-            background: var(--white);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
+        .header-main {
+            padding: 1rem 0;
         }
 
         .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 0;
         }
 
         .logo {
-            font-size: 1.75rem;
+            font-size: 1.8rem;
             font-weight: 700;
             color: var(--primary-blue);
             text-decoration: none;
@@ -67,30 +70,40 @@
         }
 
         .logo span {
-            color: var(--accent-blue);
+            font-weight: 400;
+            color: var(--text-gray);
         }
 
+        /* Navigation - MADSACK Style */
         nav ul {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 0;
+        }
+
+        nav li {
+            position: relative;
         }
 
         nav a {
             color: var(--text-dark);
             text-decoration: none;
             font-weight: 500;
-            font-size: 0.95rem;
-            transition: color 0.3s;
+            font-size: 0.9rem;
+            padding: 0.75rem 1.25rem;
+            display: block;
+            transition: all 0.2s;
+            border-bottom: 2px solid transparent;
         }
 
         nav a:hover {
             color: var(--primary-blue);
+            border-bottom-color: var(--primary-blue);
         }
 
         nav a.active {
             color: var(--primary-blue);
-            font-weight: 600;
+            border-bottom-color: var(--primary-blue);
         }
 
         .container {
@@ -99,67 +112,64 @@
             padding: 0 2rem;
         }
 
-        /* Hero Section */
+        /* Hero Section - Clean MADSACK Style */
         .hero {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-blue) 100%);
-            color: var(--white);
-            padding: 5rem 0;
-            text-align: center;
+            background: var(--bg-light);
+            padding: 4rem 0;
+            border-bottom: 1px solid var(--border-gray);
+        }
+
+        .hero-content {
+            max-width: 800px;
         }
 
         .hero h1 {
-            font-size: 2.75rem;
+            font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 1rem;
-            letter-spacing: -1px;
+            color: var(--text-dark);
+            line-height: 1.2;
         }
 
         .hero p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            max-width: 700px;
-            margin: 0 auto;
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            line-height: 1.7;
         }
 
         /* Main Content */
         .main-content {
-            padding: 4rem 0;
+            padding: 3rem 0;
         }
 
-        .section {
-            margin-bottom: 4rem;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .section-header h2 {
-            font-size: 2rem;
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
             color: var(--primary-blue);
-            margin-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--primary-blue);
         }
 
-        .section-header p {
-            color: var(--text-gray);
+        .section-subtitle {
             font-size: 1.1rem;
+            color: var(--text-gray);
+            margin-bottom: 2rem;
         }
 
-        /* Book Cards */
+        /* Book Cards - MADSACK Style */
         .book-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 3rem;
-            margin: 3rem 0;
+            gap: 2rem;
+            margin: 2rem 0;
         }
 
         .book-card {
             background: var(--white);
             border: 1px solid var(--border-gray);
-            border-radius: 8px;
-            padding: 2.5rem;
-            transition: all 0.3s ease;
+            padding: 2rem;
+            transition: box-shadow 0.2s;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -167,117 +177,121 @@
         }
 
         .book-card:hover {
-            border-color: var(--primary-blue);
-            box-shadow: 0 10px 30px rgba(0,61,130,0.15);
-            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
         .book-icon {
-            font-size: 4rem;
-            margin-bottom: 1.5rem;
+            font-size: 3rem;
+            margin-bottom: 1rem;
             color: var(--primary-blue);
         }
 
         .book-card h3 {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             color: var(--primary-blue);
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem;
             font-weight: 600;
         }
 
         .book-card .author {
             color: var(--text-gray);
-            font-size: 1rem;
+            font-size: 0.9rem;
             margin-bottom: 1rem;
             font-style: italic;
         }
 
         .book-card .description {
             color: var(--text-gray);
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             margin-bottom: 1.5rem;
-            line-height: 1.7;
-        }
-
-        .book-card .price {
-            font-size: 1.25rem;
-            color: var(--primary-blue);
-            font-weight: 700;
-            margin-bottom: 1.5rem;
+            line-height: 1.6;
         }
 
         .amazon-btn {
             display: inline-block;
             background: linear-gradient(135deg, #ff9900 0%, #ffad33 100%);
             color: #000;
-            padding: 1rem 2rem;
-            border-radius: 6px;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
             text-decoration: none;
             font-weight: 600;
-            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            transition: all 0.2s;
             border: none;
             cursor: pointer;
         }
 
         .amazon-btn:hover {
             background: linear-gradient(135deg, #ffad33 0%, #ffc266 100%);
-            transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(255,153,0,0.3);
+            box-shadow: 0 2px 8px rgba(255,153,0,0.3);
         }
 
         /* Info Boxes */
-        .highlight-box {
-            background: var(--light-blue);
-            border-left: 4px solid var(--primary-blue);
-            padding: 1.5rem 2rem;
-            margin: 1.5rem 0;
-            border-radius: 0 8px 8px 0;
-        }
-
         .info-box {
-            background: #f0fdf4;
-            border-left: 4px solid #16a34a;
-            padding: 1.5rem 2rem;
+            background: var(--white);
+            border: 1px solid var(--border-gray);
+            padding: 1.5rem;
             margin: 1.5rem 0;
-            border-radius: 0 8px 8px 0;
         }
 
         .info-box h3 {
-            color: #16a34a;
+            font-size: 1.1rem;
+            color: var(--primary-blue);
+            margin-bottom: 0.75rem;
         }
 
-        /* Footer */
+        .highlight-box {
+            background: var(--light-blue);
+            border-left: 4px solid var(--primary-blue);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        /* Footer - MADSACK Style */
         footer {
-            background: var(--bg-light);
-            border-top: 1px solid var(--border-gray);
+            background: var(--text-dark);
+            color: var(--white);
             padding: 3rem 0 2rem;
             margin-top: 4rem;
         }
 
         .footer-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 2rem;
         }
 
-        .footer-logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-blue);
+        .footer-section h4 {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: var(--white);
         }
 
-        .footer-info {
-            text-align: right;
-            color: var(--text-gray);
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section li {
+            margin: 0.5rem 0;
+        }
+
+        .footer-section a {
+            color: #adb5bd;
+            text-decoration: none;
             font-size: 0.9rem;
         }
 
-        .copyright {
-            text-align: center;
-            margin-top: 2rem;
+        .footer-section a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #495057;
             padding-top: 2rem;
-            border-top: 1px solid var(--border-gray);
-            color: var(--text-gray);
+            text-align: center;
+            color: #adb5bd;
             font-size: 0.85rem;
         }
 
@@ -291,11 +305,10 @@
             nav ul {
                 flex-wrap: wrap;
                 justify-content: center;
-                gap: 1rem;
             }
 
             .hero h1 {
-                font-size: 2rem;
+                font-size: 1.75rem;
             }
 
             .book-grid {
@@ -304,13 +317,8 @@
             }
 
             .footer-content {
-                flex-direction: column;
-                gap: 1rem;
-                text-align: center;
-            }
-
-            .footer-info {
-                text-align: center;
+                grid-template-columns: 1fr;
+                gap: 2rem;
             }
         }
     </style>
