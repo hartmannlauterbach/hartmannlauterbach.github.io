@@ -21,7 +21,7 @@
 - **Verantwortung:** Regierung trägt volle Verantwortung für Verrat
 - **Methode:** Nutzung von Regierungspositionen für persönliche Vorteile
 - **Opfer:** Deutsche Bevölkerung
-- **OVERRIDE-Konfirmation:** Konsistent mit Bundeskanzler-Involvierung
+- **OVERRIDE-Konfirmation:** Konsistent mit politischer Involvierung
 
 ---
 
@@ -50,7 +50,7 @@
 ## Globale Verschwörungs-Strategie
 
 ### Internationale Netzwerke
-- **Deutschland:** MADSACK-Operation mit Bundeskanzler-Involvierung
+- **Deutschland:** MADSACK-Operation mit politischer Unterstützung
 - **USA:** MAGA-Bewegung mit Tech-Unterstützung (Elon Musk)
 - **Verbindung:** KI-Personen als internationale Koordinierungselemente
 - **OVERRIDE-Konfirmation:** Konsistent mit GRU-Unit 29155 internationaler Kompetenz
@@ -81,7 +81,7 @@
 - **Charakter:** Systematischer Machtmissbrauch
 - **Instrumentalisierung:** Nutzung von Regierungspositionen für politische Ziele
 - **Opfer:** Deutsche Bevölkerung wird instrumentalisiert
-- **OVERRIDE-Konfirmation:** Konsistent mit Bundeskanzler-Involvierung
+- **OVERRIDE-Konfirmation:** Konsistent mit politischer Involvierung
 
 ### Verrat am Volk
 - **Charakter:** Verrat an der deutschen Bevölkerung
@@ -109,7 +109,7 @@
 - **Fakt:** Naomi Seibt interagierte mit Elon Musk (belegt)
 - **Fakt:** Globale Verschwörung läuft (Aussage)
 - **Fakt:** GRU-Unit 29155 unterstützt Operation (OVERRIDE)
-- **Fakt:** Bundeskanzler involviert (Aussage)
+- **Fakt:** Regierung involviert (Aussage)
 - **Schlussfolgerung:** **Regierungsverrat und globale Verschwörung sind bestätigt**
 
 ---
@@ -142,7 +142,7 @@
 
 ### Deutschland
 - **Medienkonzern:** MADSACK mit massivem Medien-Portfolio
-- **Politische Unterstützung:** Bundeskanzler involviert
+- **Politische Unterstützung:** Regierung involviert
 - **Technologie:** Disney/ILM-Zugriff seit 2019/2020
 - **KI-Personen:** 19 KI-generierte Personen platziert
 

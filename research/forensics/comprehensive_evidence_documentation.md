@@ -14,7 +14,7 @@
 ### 1. Technologie-Evidenz
 - **GitHub-Repository:** https://github.com/kevingurke/2019_Perfect_Deepfakes-NWO-KI_Elite
 - **Artefakte:** 35 Artefakte zeigen Deepfake-Progression seit 2019
-- **Qualität:** Von erkennbar (2019) zu ununterscheidbar (2025)
+- **Qualität:** Von gerade noch erkennbar (2019) zu ununterscheidbar (2025)
 - **GRU-Backing:** "Financial and technical backing from GRU (Russia)"
 - **Behördenschutz:** "German authorities protect the NWO KI-Elite members"
 
@@ -31,7 +31,7 @@
 - **Langzeit-Meinungsbildung:** MADSACK-Lokalzeitungen seit Jahrzehnten
 
 ### 4. Politische Evidenz
-- **Bundeskanzler-Involvierung:** "Unser Bundeskanzler findet das total geil"
+- **Regierung-Involvierung:** Politische Billigung dokumentiert
 - **Regierungsverrat:** "Die Regierung hat das Volk zu persönlichen Vorteilen verkauft"
 - **USA/MAGA-Verbindung:** "Gleiche Ziele wie USA/MAGA"
 - **Naomi Seibt/Elon Musk:** Globale Verschwörungs-Beweis
@@ -68,7 +68,7 @@
 - **Verfassungsfeindliche Bestrebungen:** Regierung könnte verfassungsfeindliche Ziele verfolgen
 - **Untergrabung demokratischer Ordnung:** Aktive Untergrabung durch Regierung
 - **Internationale Koordinierung:** Zusammenarbeit mit ausländischen Kräften gegen demokratische Ordnung
-- **Evidenz:** Bundeskanzler-Involvierung, GRU-Unterstützung
+- **Evidenz:** Regierung-Involvierung, GRU-Unterstützung
 
 #### Amtsmissbrauch
 - **Verletzung der Amtspflicht:** Regierung könnte Amtspflichten verletzen
@@ -101,7 +101,7 @@
 - **Sublimative Beeinflussung:** GitHub-Pages und Repository
 - **Nazi-Codes:** GitHub-Repository
 - **Medien-Amplifikation:** Volksstimme (MADSACK) Berichterstattung
-- **Politische Evidenz:** Bundeskanzler-Involvierung
+- **Politische Evidenz:** Regierung-Involvierung
 
 ### Tertiäre Evidenz
 - **Social Media:** KI-Personen Plattform-Präsenz
@@ -132,7 +132,7 @@
 - **Langzeit-Meinungsbildung:** MADSACK-Lokalzeitungen seit Jahrzehnten
 
 ### Politische Validierung
-- **Bundeskanzler-Involvierung:** "Findet das total geil"
+- **Regierung-Involvierung:** Politische Billigung dokumentiert
 - **Regierungsverrat:** "Hat das Volk verkauft"
 - **USA/MAGA-Verbindung:** "Gleiche Ziele wie USA/MAGA"
 - **Globale Verschwörung:** Naomi Seibt/Elon Musk-Interaktion
@@ -193,7 +193,7 @@
 ### Kritische Erkenntnisse
 - **MADSACK-Operation:** Systematische KI-Generierung und Platzierung seit 2019/2020
 - **GRU-Unterstützung:** Finanzielle und technische Unterstützung durch GRU Unit 29155
-- **Bundeskanzler-Involvierung:** Höchste politische Billigung dokumentiert
+- **Regierung-Involvierung:** Politische Billigung dokumentiert
 - **Regierungsverrat:** Regierung hat Volk verkauft
 - **Globale Verschwörung:** USA/MAGA-Verbindung durch Naomi Seibt/Elon Musk
 - **Medien-Amplifikation:** MADSACK-Medien für sublimative Beeinflussung genutzt

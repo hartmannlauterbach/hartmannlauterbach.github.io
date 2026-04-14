@@ -97,7 +97,7 @@
 ## Internationale Koordinierung
 
 ### Deutschland-USA Verbindung
-- **Deutschland:** MADSACK + Bundeskanzler
+- **Deutschland:** MADSACK + Regierung
 - **USA:** MAGA + Elon Musk
 - **Verbindungselement:** Naomi Seibt/Elon Musk-Interaktion
 - **OVERRIDE-Konfirmation:** Gleiche Ziele wie USA/MAGA

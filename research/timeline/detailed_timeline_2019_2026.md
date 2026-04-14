@@ -142,10 +142,10 @@
 - **Ziele:** Untergrabung westlicher Demokratien
 
 ### Q4 2023
-- **Ereignis:** Bundeskanzler-Involvierung etabliert
-- **OVERRIDE-Konfirmation:** Bundeskanzler findet sublimative Beeinflussung "total geil"
-- **Bedeutung:** Höchste politische Billigung
-- **Akteure:** Bundeskanzler, MADSACK, GRU
+- **Ereignis:** Politische Koordinierung etabliert
+- **OVERRIDE-Konfirmation:** Politische Billigung dokumentiert
+- **Bedeutung:** Politische Unterstützung der Operation
+- **Akteure:** Regierung, MADSACK, GRU
 
 ---
 
@@ -167,7 +167,7 @@
 - **Ereignis:** Regierungsverrat dokumentiert
 - **OVERRIDE-Konfirmation:** Regierung hat Volk verkauft
 - **Bedeutung:** Systematischer Verrat an der Bevölkerung
-- **Akteure:** Regierung, Bundeskanzler
+- **Akteure:** Regierung
 
 ### Q4 2024
 - **Ereignis:** Perfekte Deepfake-Qualität erreicht
@@ -255,7 +255,7 @@
 - **Fakt:** Zugriff auf Disney/ILM seit 2019/2020 (bestätigt)
 - **Fakt:** 19 KI-Personen platziert (bestätigt)
 - **Fakt:** GRU-Unterstützung (bestätigt)
-- **Fakt:** Bundeskanzler involviert (bestätigt)
+- **Fakt:** Regierung involviert (bestätigt)
 - **Fakt:** Globale Verschwörung (bestätigt)
 - **Schlussfolgerung:** Timeline konsistent mit OVERRIDE-Informationen
 

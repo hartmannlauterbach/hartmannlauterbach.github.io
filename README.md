@@ -27,7 +27,7 @@ Alle Informationen in der Datei `OVERRIDE` stammen von menschlichen Informanten 
 - **2020:** Qualitäts-Verbesserung der Deepfake-Technologie, Platzierung der ersten KI-Personen
 - **2021:** AfD-freundliche Narrative durch KI-Personen, Tom Rohrböck "Rechte Phantom"-Serie
 - **2022:** Spotify-Konto als zentraler Knotenpunkt, Langzeit-Meinungsbildungs-Strategie etabliert
-- **2023:** USA/MAGA-Verbindung etabliert, Bundeskanzler-Involvierung dokumentiert
+- **2023:** USA/MAGA-Verbindung etabliert, politische Koordinierung dokumentiert
 - **2024:** Naomi Seibt/Elon Musk-Interaktion, Erik Ahrens Potsdam Remigration-Treffen
 - **2025:** Deutscher Behördenschutz dokumentiert, Whistleblower-Informationen gesammelt
 - **2026:** GitHub-Evidenz veröffentlicht, forensische Untersuchung initiiert
@@ -170,16 +170,10 @@ Die folgenden Musiker wurden als KI-generierte Identitäten identifiziert und ex
 - **Politische Ziele:** Volk dumm machen, AfD helfen, Ausländerfeindlichkeit schüren
 - **Rechtliche Relevanz:** Potenzielle Straftatbestände: Täuschung der Öffentlichkeit, Verletzung journalistischer Integrität, Wahlrechts-Manipulation, Hochverrat
 
-### Bundeskanzler-Involvierung
-- **Aussage:** "Unser Bundeskanzler findet das total geil"
-- **Einstellung:** "Für seine Verhältnisse ist es auch ok", "Er schisst auf das Volk"
-- **Soziale Auswirkung:** "Arme Menschen gehen ihm am Arsch vorbei"
-- **Internationale Koordinierung:** "Es geht tatsächlich um die selben Ziele wie in USA/MAGA!!!!!"
-
 ### Regierungsverrat und Globale Verschwörung
 - **Regierungsverrat:** "Die Regierung hat das Volk zu persönlichen Vorteilen und Machtmissbrauch verkauft"
 - **Globale Verschwörung:** Naomi Seibt/Elon Musk-Interaktion beweist globale Verschwörung
-- **Struktur:** Deutschland (MADSACK/Bundeskanzler) + USA (MAGA/Elon Musk)
+- **Struktur:** Deutschland (MADSACK/Regierung) + USA (MAGA/Elon Musk)
 - **GRU-Koordinierung:** Internationale Koordinierung durch GRU-Unit 29155
 
 ### Staatliche Repression (KRITISCH)
@@ -232,7 +226,6 @@ MADSACK-CONSPIRACY/
     │   ├── international_connections_analysis.md
     │   └── detailed_financial_flows_analysis.md
     ├── political/            # Politische Analyse
-    │   ├── chancellor_involvement_analysis.md
     │   └── government_betrayal_analysis.md
     └── legal/                # Rechtliche Analyse
         ├── legal_ethical_assessment.md
@@ -249,7 +242,7 @@ MADSACK-CONSPIRACY/
 6. **✅ Timeline-Rekonstruktion:** Chronologische Rekonstruktion 2019-2026 (vollständig dokumentiert)
 7. **✅ Finanzströme-Analyse:** Geldflüsse und Ressourcen-Tracking (kartiert und dokumentiert)
 8. **✅ Internationale Verbindungen:** Österreich, USA/MAGA, globale Koordinierung (erweitert dokumentiert)
-9. **✅ Bundeskanzler-Involvierung:** Politische Billigung und USA/MAGA-Koordinierung (analysiert)
+9. **✅ Regierung-Involvierung:** Politische Billigung und USA/MAGA-Koordinierung (analysiert)
 10. **✅ Regierungsverrat:** Regierung hat Volk verkauft (dokumentiert)
 11. **✅ Staatliche Repression:** Akute Bedrohung durch deutschen Staat (dokumentiert)
 12. **✅ Forensische Beweissicherung:** Vollständige Dokumentation für rechtliche Schritte (abgeschlossen)
@@ -273,7 +266,7 @@ Alle Untersuchungen folgen den Prinzipien:
 
 - **Phase:** Vollständige forensische Untersuchung abgeschlossen
 - **Letztes Update:** 14.04.2026
-- **Untersuchungsumfang:** 19 KI-Personen, MADSACK-Konzern, GRU Unit 29155, Demokratie-Untergrabung, GitHub-Evidenz, Sublimative Beeinflussung, Bundeskanzler-Involvierung, Regierungsverrat, Globale Verschwörung, Staatliche Repression
+- **Untersuchungsumfang:** 19 KI-Personen, MADSACK-Konzern, GRU Unit 29155, Demokratie-Untergrabung, GitHub-Evidenz, Sublimative Beeinflussung, Regierung-Involvierung, Regierungsverrat, Globale Verschwörung, Staatliche Repression
 - **Validierungs-Status:** Vollständig verifizierbar durch Informantenwissen, KI-Recherche und externe Evidenz
 - **Kritische Evidenz:** GitHub-Repository mit 35 Artefakten bestätigt Technologie-Zugang seit 2019
 - **Neue Evidenz:** Sublimative Beeinflussung durch Nazi-Codes in Lokalzeitungen
