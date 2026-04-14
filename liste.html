@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unternehmensliste | MADSACK Analyse</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #003d82;
+            --accent-blue: #0056b3;
+            --light-blue: #e8f1f8;
+            --text-dark: #1a1a1a;
+            --text-gray: #4a4a4a;
+            --bg-light: #f8f9fa;
+            --white: #ffffff;
+            --border-gray: #dee2e6;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--white);
+        }
+
+        /* Header & Navigation - MADSACK Style */
+        .main-header {
+            background: var(--white);
+            border-bottom: 1px solid var(--border-gray);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-top {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 0.4rem 0;
+            font-size: 0.8rem;
+        }
+
+        .header-top .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-main {
+            padding: 1rem 0;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            font-weight: 400;
+            color: var(--text-gray);
+        }
+
+        /* Navigation - MADSACK Style */
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 0;
+        }
+
+        nav li {
+            position: relative;
+        }
+
+        nav a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            padding: 0.75rem 1.25rem;
+            display: block;
+            transition: all 0.2s;
+            border-bottom: 2px solid transparent;
+        }
+
+        nav a:hover {
+            color: var(--primary-blue);
+            border-bottom-color: var(--primary-blue);
+        }
+
+        nav a.active {
+            color: var(--primary-blue);
+            border-bottom-color: var(--primary-blue);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Hero Section - Clean MADSACK Style */
+        .hero {
+            background: var(--bg-light);
+            padding: 4rem 0;
+            border-bottom: 1px solid var(--border-gray);
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+
+        /* Stats - MADSACK Style */
+        .stats-section {
+            background: var(--bg-light);
+            padding: 3rem 0;
+            border-top: 1px solid var(--border-gray);
+            border-bottom: 1px solid var(--border-gray);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        /* Content */
+        .main-content {
+            padding: 3rem 0;
+        }
+
+        .content-section {
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--primary-blue);
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            margin-bottom: 2rem;
+        }
+
+        /* Category Headers */
+        .category-header {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 1rem 1.5rem;
+            margin: 2rem 0 1rem;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        /* Table Styles */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0 2rem;
+            font-size: 0.9rem;
+        }
+
+        .data-table th {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .data-table td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid var(--border-gray);
+            vertical-align: top;
+        }
+
+        .data-table tr:hover {
+            background: var(--bg-light);
+        }
+
+        .data-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        /* Info Boxes */
+        .info-box {
+            background: var(--white);
+            border: 1px solid var(--border-gray);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .info-box h3 {
+            font-size: 1.1rem;
+            color: var(--primary-blue);
+            margin-bottom: 0.75rem;
+        }
+
+        .highlight-box {
+            background: var(--light-blue);
+            border-left: 4px solid var(--primary-blue);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .warning-box {
+            background: #fff5f5;
+            border: 1px solid #feb2b2;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .warning-box h3 {
+            color: #c53030;
+            margin-bottom: 0.75rem;
+        }
+
+        /* Company Lists */
+        .company-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .company-list li {
+            padding: 0.75rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text-gray);
+            border-bottom: 1px solid var(--border-gray);
+        }
+
+        .company-list li::before {
+            content: '›';
+            position: absolute;
+            left: 0;
+            color: var(--primary-blue);
+            font-weight: bold;
+        }
+
+        .company-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* Links */
+        .download-link {
+            display: inline-block;
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            margin-top: 1rem;
+            margin-right: 1rem;
+        }
+
+        .download-link:hover {
+            background: var(--accent-blue);
+        }
+
+        /* Structure Box */
+        .structure-box {
+            background: var(--bg-light);
+            border: 1px solid var(--border-gray);
+            padding: 2rem;
+            margin: 1.5rem 0;
+            font-family: monospace;
+            font-size: 0.85rem;
+            line-height: 1.8;
+            overflow-x: auto;
+            white-space: pre;
+        }
+
+        /* Footer - MADSACK Style */
+        footer {
+            background: var(--text-dark);
+            color: var(--white);
+            padding: 3rem 0 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section li {
+            margin: 0.5rem 0;
+        }
+
+        .footer-section a {
+            color: #adb5bd;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .footer-section a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #495057;
+            padding-top: 2rem;
+            text-align: center;
+            color: #adb5bd;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .data-table {
+                font-size: 0.8rem;
+            }
+
+            .data-table th,
+            .data-table td {
+                padding: 0.5rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .structure-box {
+                font-size: 0.75rem;
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-top">
+            <div class="container">
+                <span>Komplette Unternehmensliste</span>
+                <span>Stand: April 2026</span>
+            </div>
+        </div>
+        <div class="header-main">
+            <div class="container header-content">
+                <a href="index.html" class="logo">FORENSIK <span>Analyse</span></a>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Untersuchung</a></li>
+                        <li><a href="unternehmensgruppe.html">Unternehmensgruppe</a></li>
+                        <li><a href="liste.html" class="active">Liste</a></li>
+                        <li><a href="index.html#portfolio">Portfolio</a></li>
+                        <li><a href="buchempfehlungen.html">Buchempfehlungen</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Komplette Unternehmensliste</h1>
+                <p>Alle Unternehmen der MADSACK Mediengruppe und TVN Hannover mit Beteiligungsquoten, Kategorien und Erläuterungen – forensisch recherchiert.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number">40+</span>
+                    <span class="stat-label">Unternehmen insgesamt</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Tochterunternehmen</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">23,1%</span>
+                    <span class="stat-label">SPD-Beteiligung</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">5+</span>
+                    <span class="stat-label">TVN-Unternehmen</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="container main-content">
+        <section class="content-section">
+            <h2 class="section-title">Gesamtübersicht</h2>
+            <p class="section-subtitle">Kategorisierte Auflistung aller identifizierten Unternehmen</p>
+
+            <div class="highlight-box">
+                <h3>📋 Kategorien</h3>
+                <p>Diese Liste enthält alle Unternehmen, an denen MADSACK und/oder TVN Hannover direkt beteiligt ist oder mit denen sie zusammenarbeiten:</p>
+                <ul class="company-list">
+                    <li><strong>Kategorie 1:</strong> 100% Tochterunternehmen (MADSACK) – Zeitungen, TVN Group, Digital, Dienstleistungen</li>
+                    <li><strong>Kategorie 2:</strong> Gemeinsame Unternehmen / Joint Ventures</li>
+                    <li><strong>Kategorie 3:</strong> Minderheitsbeteiligungen</li>
+                    <li><strong>Kategorie 4:</strong> Übernommene Unternehmen 2024 (DDV Mediengruppe)</li>
+                    <li><strong>Kategorie 5:</strong> RND Partnerzeitungen</li>
+                </ul>
+            </div>
+
+            <div style="margin: 2rem 0;">
+                <a href="MADSACK-UNTERNEHMEN-VOLLSTAENDIG.txt" class="download-link" download>📥 Vollständige Liste (.txt)</a>
+                <a href="MADSACK-LISTE.txt" class="download-link" download>📥 Kurzversion (.txt)</a>
+            </div>
+        </section>
+
+        <!-- KATEGORIE 1: 100% TOCHTERUNTERNEHMEN -->
+        <div class="category-header">KATEGORIE 1: 100% TOCHTERUNTERNEHMEN (MADSACK)</div>
+
+        <section class="content-section">
+            <h2 class="section-title">1.1 Verlagsunternehmen (Zeitungen)</h2>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Unternehmen</th>
+                        <th>Standort</th>
+                        <th>Beteiligung</th>
+                        <th>Erläuterung</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Leipziger Verlags- und Druckereigesellschaft mbH (LVDG)</td>
+                        <td>Leipzig</td>
+                        <td>100%</td>
+                        <td>Herausgeber der Leipziger Volkszeitung (LVZ), 100% Tochter seit 1991</td>
+                    </tr>
+                    <tr>
+                        <td>Ostsee-Zeitung Verlagsgesellschaft mbH</td>
+                        <td>Rostock</td>
+                        <td>100%</td>
+                        <td>Herausgeber der Ostsee-Zeitung</td>
+                    </tr>
+                    <tr>
+                        <td>Hannoversche Allgemeine Zeitung GmbH & Co. KG</td>
+                        <td>Hannover</td>
+                        <td>100%</td>
+                        <td>Herausgeber der HAZ</td>
+                    </tr>
+                    <tr>
+                        <td>Lübecker Nachrichten GmbH</td>
+                        <td>Lübeck</td>
+                        <td>100%</td>
+                        <td>Herausgeber der Lübecker Nachrichten</td>
+                    </tr>
+                    <tr>
+                        <td>Märkische Allgemeine Zeitung GmbH</td>
+                        <td>Potsdam</td>
+                        <td>100%</td>
+                        <td>Herausgeber der Märkischen Allgemeinen</td>
+                    </tr>
+                    <tr>
+                        <td>Dresdner Neueste Nachrichten GmbH</td>
+                        <td>Dresden</td>
+                        <td>100%</td>
+                        <td>Herausgeber der DNN</td>
+                    </tr>
+                    <tr>
+                        <td>Kieler Nachrichten GmbH</td>
+                        <td>Kiel</td>
+                        <td>100%</td>
+                        <td>Herausgeber der Kieler Nachrichten</td>
+                    </tr>
+                    <tr>
+                        <td>Neue Presse GmbH</td>
+                        <td>Hannover</td>
+                        <td>100%</td>
+                        <td>Herausgeber der Neuen Presse</td>
+                    </tr>
+                    <tr>
+                        <td>Wolfsburger Allgemeine Zeitung GmbH</td>
+                        <td>Wolfsburg</td>
+                        <td>100%</td>
+                        <td>Herausgeber der WAZ</td>
+                    </tr>
+                    <tr>
+                        <td>Peiner Allgemeine Zeitung GmbH</td>
+                        <td>Peine</td>
+                        <td>100%</td>
+                        <td>Herausgeber der PAZ</td>
+                    </tr>
+                    <tr>
+                        <td>Göttinger Tageblatt GmbH</td>
+                        <td>Göttingen</td>
+                        <td>100%</td>
+                        <td>Herausgeber des Göttinger Tageblatts</td>
+                    </tr>
+                    <tr>
+                        <td>Eichsfelder Tageblatt GmbH</td>
+                        <td>Heilbad Heiligenstadt</td>
+                        <td>100%</td>
+                        <td>Herausgeber des Eichsfelder Tageblatts</td>
+                    </tr>
+                    <tr>
+                        <td>Naumburger Tageblatt GmbH</td>
+                        <td>Naumburg</td>
+                        <td>100%</td>
+                        <td>Herausgeber des Naumburger Tageblatts</td>
+                    </tr>
+                    <tr>
+                        <td>Schaumburger Nachrichten GmbH</td>
+                        <td>Stadthagen</td>
+                        <td>100%</td>
+                        <td>Herausgeber der Schaumburger Nachrichten</td>
+                    </tr>
+                    <tr>
+                        <td>Die Harke GmbH & Co. KG</td>
+                        <td>Nienburg</td>
+                        <td>100%</td>
+                        <td>Herausgeber der Harke</td>
+                    </tr>
+                    <tr>
+                        <td>Täglicher Anzeiger Holzminden GmbH</td>
+                        <td>Holzminden</td>
+                        <td>100%</td>
+                        <td>Herausgeber des TA Holzminden</td>
+                    </tr>
+                    <tr>
+                        <td>Aller-Zeitung GmbH & Co. KG</td>
+                        <td>Celle</td>
+                        <td>100%</td>
+                        <td>Herausgeber der Aller-Zeitung</td>
+                    </tr>
+                    <tr>
+                        <td>Morgenpost für Sachsen GmbH</td>
+                        <td>Dresden</td>
+                        <td>100%</td>
+                        <td>Herausgeber der Morgenpost Sachsen</td>
+                    </tr>
+                    <tr>
+                        <td>Döbelner Allgemeine Zeitung GmbH</td>
+                        <td>Döbeln</td>
+                        <td>100%</td>
+                        <td>Herausgeber der Döbelner Allgemeinen</td>
+                    </tr>
+                    <tr>
+                        <td>Sächsische Zeitung GmbH</td>
+                        <td>Dresden</td>
+                        <td>100%</td>
+                        <td>Über DDV Mediengruppe (100% seit 2024)</td>
+                    </tr>
+                    <tr>
+                        <td>Adolf Enke GmbH & Co. KG</td>
+                        <td>Gifhorn</td>
+                        <td>100%</td>
+                        <td>Druckerei und Verlag</td>
+                    </tr>
+                    <tr>
+                        <td>Wilhelm Bing Druckerei und Verlag GmbH</td>
+                        <td>Korbach</td>
+                        <td>100%</td>
+                        <td>Druckerei und Verlag</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="content-section">
+            <h2 class="section-title">1.2 TVN Group Unternehmen (Film & Fernsehen) – 100% MADSACK</h2>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Unternehmen</th>
+                        <th>Standort</th>
+                        <th>Beteiligung</th>
+                        <th>Erläuterung</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>TVN GROUP Holding GmbH & Co. KG</td>
+                        <td>Hannover</td>
+                        <td>100%</td>
+                        <td>Dachgesellschaft der TVN Group, 100% Tochter der MADSACK Mediengruppe</td>
+                    </tr>
+                    <tr>
+                        <td>TVN Corporate Media GmbH & Co. KG</td>
+                        <td>Hannover</td>
+                        <td>100%</td>
+                        <td>Gesellschafter der TVN Group Holding</td>
+                    </tr>
+                    <tr>
+                        <td>TVN Media Professionals GmbH</td>
+                        <td>Berlin</td>
+                        <td>100%</td>
+                        <td>TV-Produktion und Dienstleistungen</td>
+                    </tr>
+                    <tr>
+                        <td>TVN MOBILE PRODUCTION GmbH</td>
+                        <td>Hannover</td>
+                        <td>100%</td>
+                        <td>Mobile TV-Produktion, Außenübertragungen (jetzt Teil von TVN LIVE PRODUCTION)</td>
+                    </tr>
+                    <tr>
+                        <td>AZ Media TV GmbH</td>
+                        <td>Hannover</td>
+                        <td>100%</td>
+                        <td>TV-Produktionsunternehmen (übernommen von Zalbertus)</td>
+                    </tr>
+                    <tr>
+                        <td>TVN Hannover GmbH</td>
+                        <td>Hannover</td>
+                        <td>100%</td>
+                        <td>TV-Produktionsstandort Hannover</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="content-section">
+            <h2 class="section-title">1.3 Digitale Unternehmen & Portale – 100% MADSACK</h2>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Unternehmen</th>
+                        <th>Standort</th>
+                        <th>Beteiligung</th>
+                        <th>Erläuterung</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>RND RedaktionsNetzwerk Deutschland GmbH</td>
+                        <td>Hannover</td>
+                        <td>100%</td>
+                        <td>Zentrale Redaktion, überregionales Nachrichtenportal RND.de</td>
+                    </tr>
+                    <tr>
+                        <td>MADSACK Digital GmbH</td>
+                        <td>Hannover</td>
+                        <td>100%</td>
+                        <td>Digitale Geschäftsfelder, Online-Portale, Apps</td>
+                    </tr>
+                    <tr>
+                        <td>reisereporter.de GmbH</td>
+                        <td>Hannover</td>
+                        <td>100%</td>
+                        <td>Reisejournalismus-Portal</td>
+                    </tr>
+                    <tr>
+                        <td>SPORTBUZZER GmbH</td>
+                        <td>Hannover</td>
+                        <td>100%</td>
+                        <td>Sportnachrichten-Portal</td>
+                    </tr>
+                    <tr>
+                        <td>TAG24 GmbH</td>
+                        <td>Dresden/Leipzig</td>
+                        <td>100%</td>
+                        <td>Online-Nachrichtenportal (via DDV Übernahme 2024)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="content-section">
+            <h2 class="section-title">1.4 Dienstleistungsunternehmen – 100% MADSACK</h2>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Unternehmen</th>
+                        <th>Standort</th>
+                        <th>Beteiligung</th>
+                        <th>Erläuterung</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>MADSACK Market Solutions GmbH</td>
+                        <td>Hannover</td>
+                        <td>100%</td>
+                        <td>Zentrale Vermarktung, Werbung, Analyse, Preisgestaltung</td>
+                    </tr>
+                    <tr>
+                        <td>MDG Medien Dienstleistungsgesellschaft mbH</td>
+                        <td>Hannover</td>
+                        <td>100%</td>
+                        <td>Medien-Dienstleistungen</td>
+                    </tr>
+                    <tr>
+                        <td>MADSACK Post & Logistik GmbH</td>
+                        <td>Hannover</td>
+                        <td>100%</td>
+                        <td>Post- und Logistikdienstleistungen</td>
+                    </tr>
+                    <tr>
+                        <td>Gutenberg Rechenzentrum GmbH & Co. KG</td>
+                        <td>Hannover</td>
+                        <td>73,1%</td>
+                        <td>IT-Dienstleistungen, Rechenzentrum (Mehrheitsbeteiligung)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- KATEGORIE 2: JOINT VENTURES -->
+        <div class="category-header">KATEGORIE 2: GEMEINSAME UNTERNEHMEN / JOINT VENTURES</div>
+
+        <section class="content-section">
+            <h2 class="section-title">TVN LIVE PRODUCTION (Joint Venture)</h2>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Unternehmen</th>
+                        <th>Standort</th>
+                        <th>Beteiligung</th>
+                        <th>Partner</th>
+                        <th>Erläuterung</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>TVN LIVE PRODUCTION GmbH</td>
+                        <td>Hannover/Flörsheim</td>
+                        <td><strong>TVN 65%</strong><br>Sportcast 35%</td>
+                        <td>Sportcast GmbH (DFL)</td>
+                        <td>TV-Außenübertragungen für Bundesliga und 2. Bundesliga. Gegründet 2022 durch Zusammenschluss von TVN MOBILE PRODUCTION und Sportcast-Töchtern LIVECAST TV Produktion sowie HD SAT Communication.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <h3>Details zur Zusammensetzung von TVN LIVE PRODUCTION:</h3>
+                <ul class="company-list">
+                    <li>TVN MOBILE PRODUCTION GmbH (100% TVN → jetzt 65% über TVN)</li>
+                    <li>LIVECAST TV Produktion GmbH (100% Sportcast → jetzt 35%)</li>
+                    <li>HD SAT Communication GmbH (100% Sportcast → jetzt 35%)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- KATEGORIE 3: MINDERHEITSBETEILIGUNGEN -->
+        <div class="category-header">KATEGORIE 3: MINDERHEITSBETEILIGUNGEN</div>
+
+        <section class="content-section">
+            <h2 class="section-title">3.1 Online-Marktplätze & Digitale Dienste</h2>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Unternehmen</th>
+                        <th>Beteiligung</th>
+                        <th>Erläuterung</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Immonet GmbH</td>
+                        <td>Minderheitsbeteiligung</td>
+                        <td>Online-Immobilienmarktplatz, enge Kooperation mit MADSACK-Zeitungen</td>
+                    </tr>
+                    <tr>
+                        <td>Kimeta GmbH</td>
+                        <td>Minderheitsbeteiligung</td>
+                        <td>Online-Stellenmarkt, Kooperation für Jobanzeigen</td>
+                    </tr>
+                    <tr>
+                        <td>Kununu GmbH</td>
+                        <td>Minderheitsbeteiligung (historisch)</td>
+                        <td>Arbeitgeberbewertungsportal, MADSACK war früh beteiligt</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="content-section">
+            <h2 class="section-title">3.2 Zeitungsbeteiligungen</h2>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Zeitung</th>
+                        <th>Standort</th>
+                        <th>Beteiligung</th>
+                        <th>Erläuterung</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Cellesche Zeitung</td>
+                        <td>Celle</td>
+                        <td>24,8%</td>
+                        <td>Minderheitsbeteiligung, Hauptgesellschafter: andere Verleger</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- KATEGORIE 4: ÜBERNOMMENE UNTERNEHMEN 2024 -->
+        <div class="category-header">KATEGORIE 4: ÜBERNOMMENE UNTERNEHMEN 2024 (DDV MEDIENGRUPPE)</div>
+
+        <section class="content-section">
+            <h2 class="section-title">DDV Mediengruppe (100% Übernahme)</h2>
+
+            <div class="warning-box">
+                <h3>⚠️ Wichtige Transaktion</h3>
+                <p>Im Mai 2024 übernahm die MADSACK Mediengruppe die DDV Mediengruppe zu 100%. Das Bundeskartellamt hat die Freigabe am 04.09.2024 erteilt. Verkäufer waren Bertelsmann Investments (60%) und die Deutsche Druck- und Verlagsgesellschaft (40%).</p>
+            </div>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Unternehmen</th>
+                        <th>Standort</th>
+                        <th>Beteiligung</th>
+                        <th>Produkte</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>DDV Mediengruppe GmbH</td>
+                        <td>Dresden</td>
+                        <td>100% (seit 01.05.2024)</td>
+                        <td>Verlagsgruppe</td>
+                    </tr>
+                    <tr>
+                        <td>Sächsische Zeitung GmbH</td>
+                        <td>Dresden</td>
+                        <td>100% (via DDV)</td>
+                        <td>Tageszeitung Sachsen</td>
+                    </tr>
+                    <tr>
+                        <td>TAG24 GmbH</td>
+                        <td>Dresden/Leipzig</td>
+                        <td>100% (via DDV)</td>
+                        <td>Online-Nachrichtenportal</td>
+                    </tr>
+                    <tr>
+                        <td>Döbelner Anzeiger</td>
+                        <td>Döbeln</td>
+                        <td>100% (via DDV)</td>
+                        <td>Regionalzeitung</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- KATEGORIE 5: RND PARTNER -->
+        <div class="category-header">KATEGORIE 5: RND REDAKTIONSNETZWERK - PARTNERZEITUNGEN</div>
+
+        <section class="content-section">
+            <h2 class="section-title">RND Partner (über 100 Partnerzeitungen)</h2>
+
+            <div class="info-box">
+                <h3>Über das RND</h3>
+                <p>Das RedaktionsNetzwerk Deutschland (RND) ist eine 100%ige Tochter der MADSACK Mediengruppe. Über 100 Partnerzeitungen nutzen die zentrale RND-Mantelredaktion für überregionale Inhalte.</p>
+            </div>
+
+            <h3 style="margin-top: 2rem; margin-bottom: 1rem; color: var(--primary-blue);">Ausgewählte RND-Partner (MADSACK-eigene Zeitungen)</h3>
+            <ul class="company-list">
+                <li>Hannoversche Allgemeine Zeitung</li>
+                <li>Leipziger Volkszeitung</li>
+                <li>Ostsee-Zeitung</li>
+                <li>Lübecker Nachrichten</li>
+                <li>Märkische Allgemeine Zeitung</li>
+                <li>Dresdner Neueste Nachrichten</li>
+                <li>Kieler Nachrichten</li>
+                <li>Sächsische Zeitung</li>
+                <li>(und 12+ weitere MADSACK-Zeitungen)</li>
+            </ul>
+
+            <h3 style="margin-top: 2rem; margin-bottom: 1rem; color: var(--primary-blue);">Wichtige externe RND-Partner</h3>
+            <ul class="company-list">
+                <li>Frankfurter Rundschau</li>
+                <li>Kölner Stadtanzeiger</li>
+                <li>Ruhr Nachrichten</li>
+                <li>Westdeutsche Zeitung</li>
+                <li>Westfälische Rundschau</li>
+                <li>Rheinische Post</li>
+                <li>Aachener Zeitung</li>
+                <li>Saarbrücker Zeitung</li>
+                <li>Stuttgarter Zeitung</li>
+                <li>Stuttgarter Nachrichten</li>
+                <li>(und 90+ weitere externe Partner)</li>
+            </ul>
+        </section>
+
+        <!-- GESAMTÜBERSICHT -->
+        <div class="category-header">GESAMTÜBERSICHT & STATISTIKEN</div>
+
+        <section class="content-section">
+            <h2 class="section-title">Gesellschaftsstruktur</h2>
+
+            <div class="structure-box">VERLAGSGESELLSCHAFT MADSACK GmbH & Co. KG (Dachgesellschaft)
+│
+├── Komplementärin: Dr. Erich Madsack GmbH (100% - haftende Gesellschafterin)
+│
+├── Kommanditistin: Deutsche Druck- und Verlagsgesellschaft mbH (23,1%)
+│   └── Eigentümer: SPD (Sozialdemokratische Partei Deutschlands)
+│
+├── Weitere Kommanditisten: diverse (Restliche Anteile)
+│
+└── 100% TOCHTERUNTERNEHMEN:
+    │
+    ├── VERLAGSBEREICH:
+    │   ├── LVDG (Leipziger Verlags- und Druckereigesellschaft)
+    │   ├── Ostsee-Zeitung Verlagsgesellschaft
+    │   ├── HAZ Hannoversche Allgemeine Zeitung
+    │   ├── Lübecker Nachrichten
+    │   ├── Märkische Allgemeine Zeitung
+    │   ├── DNN Dresdner Neueste Nachrichten
+    │   ├── (und 14+ weitere Verlagsgesellschaften)
+    │   └── DDV Mediengruppe (seit 2024):
+    │       ├── Sächsische Zeitung
+    │       ├── TAG24
+    │       └── Döbelner Anzeiger
+    │
+    ├── TVN GROUP (FILM & FERNSEHEN):
+    │   ├── TVN GROUP Holding GmbH & Co. KG
+    │   ├── TVN Corporate Media GmbH & Co. KG
+    │   ├── TVN Media Professionals GmbH (Berlin)
+    │   ├── AZ Media TV GmbH (Hannover)
+    │   └── TVN LIVE PRODUCTION GmbH (65% JV mit Sportcast)
+    │
+    ├── DIGITALE BEREICHE:
+    │   ├── RND RedaktionsNetzwerk Deutschland GmbH
+    │   ├── MADSACK Digital GmbH
+    │   ├── reisereporter.de GmbH
+    │   └── SPORTBUZZER GmbH
+    │
+    ├── DIENSTLEISTUNGEN:
+    │   ├── MADSACK Market Solutions GmbH
+    │   ├── MDG Medien Dienstleistungsgesellschaft mbH
+    │   ├── MADSACK Post & Logistik GmbH
+    │   └── Gutenberg Rechenzentrum GmbH & Co. KG (73,1%)
+    │
+    └── DRUCKEREIEN:
+        ├── Adolf Enke GmbH & Co. KG
+        └── Wilhelm Bing Druckerei und Verlag GmbH</div>
+        </section>
+
+        <section class="content-section">
+            <h2 class="section-title">Statistiken</h2>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Kategorie</th>
+                        <th>Anzahl</th>
+                        <th>Anmerkungen</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>100% Tochterunternehmen (Zeitungen)</td>
+                        <td>20+</td>
+                        <td>Verlagsgesellschaften für Regionalzeitungen</td>
+                    </tr>
+                    <tr>
+                        <td>100% Tochterunternehmen (TVN)</td>
+                        <td>5+</td>
+                        <td>TVN Group, AZ Media TV, TVN Media Professionals</td>
+                    </tr>
+                    <tr>
+                        <td>100% Tochterunternehmen (Digital)</td>
+                        <td>4+</td>
+                        <td>RND, MADSACK Digital, reisereporter.de, SPORTBUZZER</td>
+                    </tr>
+                    <tr>
+                        <td>100% Tochterunternehmen (Dienstleistungen)</td>
+                        <td>4+</td>
+                        <td>Market Solutions, MDG, Post & Logistik</td>
+                    </tr>
+                    <tr>
+                        <td>Mehrheitsbeteiligungen (>50%)</td>
+                        <td>1</td>
+                        <td>Gutenberg Rechenzentrum (73,1%)</td>
+                    </tr>
+                    <tr>
+                        <td>Joint Ventures</td>
+                        <td>1</td>
+                        <td>TVN LIVE PRODUCTION (65% TVN / 35% Sportcast)</td>
+                    </tr>
+                    <tr>
+                        <td>Minderheitsbeteiligungen</td>
+                        <td>3+</td>
+                        <td>Immonet, Kimeta, Cellesche Zeitung (24,8%)</td>
+                    </tr>
+                    <tr>
+                        <td>Übernommen 2024 (DDV)</td>
+                        <td>3</td>
+                        <td>DDV Mediengruppe, Sächsische Zeitung, TAG24</td>
+                    </tr>
+                    <tr>
+                        <td>RND-Partner (extern)</td>
+                        <td>100+</td>
+                        <td>Zeitungen ohne MADSACK-Mehrheitsbeteiligung</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Gesamtzahl Unternehmen</strong></td>
+                        <td><strong>40+</strong></td>
+                        <td>Unternehmen mit MADSACK-Beteiligung</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="content-section">
+            <h2 class="section-title">Quellen & Download</h2>
+
+            <div class="info-box">
+                <h3>📄 Quellen</h3>
+                <ul class="company-list">
+                    <li>MADSACK Mediengruppe – Offizielle Webseite: www.madsack.de</li>
+                    <li>Bundeskartellamt – Freigabe DDV-Übernahme (04.09.2024)</li>
+                    <li>MADSACK Pressemitteilung DDV-Erwerb (Mai 2024)</li>
+                    <li>DeWiki – Verlagsgesellschaft Madsack (dewiki.de)</li>
+                    <li>kress.de – Brancheninformationen (2024)</li>
+                    <li>Handelsregisterauszüge TVN GROUP Holding GmbH & Co. KG</li>
+                </ul>
+            </div>
+
+            <div style="margin: 2rem 0;">
+                <a href="MADSACK-UNTERNEHMEN-VOLLSTAENDIG.txt" class="download-link" download>📥 Vollständige Liste (.txt)</a>
+                <a href="MADSACK-LISTE.txt" class="download-link" download>📥 Kurzversion (.txt)</a>
+                <a href="unternehmensgruppe.html" class="download-link">🏢 Unternehmensgruppe →</a>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="index.html" style="display: inline-block; background: var(--primary-blue); color: white; padding: 0.75rem 1.5rem; text-decoration: none; border-radius: 4px; font-weight: 600;">
+                    ← Zurück zur Startseite
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Unternehmen</h4>
+                    <ul>
+                        <li><a href="https://ricoecke.github.io/PAZ-Sublimative-Nazi-Beeinflussung/" target="_blank">Presse</a></li>
+                        <li><a href="unternehmensgruppe.html">Unternehmensgruppe</a></li>
+                        <li><a href="liste.html">Komplette Liste</a></li>
+                        <li><a href="index.html">Management</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Portfolio</h4>
+                    <ul>
+                        <li><a href="index.html#portfolio">Journalistische Stärke</a></li>
+                        <li><a href="index.html#portfolio">Digitale Weitsicht</a></li>
+                        <li><a href="index.html#portfolio">Regional verwurzelt</a></li>
+                        <li><a href="buchempfehlungen.html">Buchempfehlungen</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Downloads</h4>
+                    <ul>
+                        <li><a href="MADSACK-UNTERNEHMEN-VOLLSTAENDIG.txt" download>Volle Liste (.txt)</a></li>
+                        <li><a href="MADSACK-LISTE.txt" download>Kurzversion (.txt)</a></li>
+                        <li><a href="https://github.com/kevingurke">GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 MADSACK Mediengruppe – Alle Rechte vorbehalten</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
