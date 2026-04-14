@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MADSACK-Untersuchung | Forensische Analyse</title>
+    <title>Forensische Untersuchung | MADSACK-Analyse</title>
     <style>
         * {
             margin: 0;
@@ -11,162 +11,260 @@
             box-sizing: border-box;
         }
 
+        :root {
+            --primary-blue: #003d82;
+            --accent-blue: #0056b3;
+            --light-blue: #e8f1f8;
+            --text-dark: #1a1a1a;
+            --text-gray: #4a4a4a;
+            --bg-light: #f5f7fa;
+            --white: #ffffff;
+            --border-gray: #e0e0e0;
+        }
+
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: #1a1a2e;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
+            color: var(--text-dark);
+            background: var(--white);
+        }
+
+        /* Header & Navigation */
+        .top-header {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 0.5rem 0;
+            font-size: 0.85rem;
+        }
+
+        .top-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .main-header {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--accent-blue);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary-blue);
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 0 2rem;
         }
 
-        header {
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-blue) 100%);
+            color: var(--white);
+            padding: 5rem 0;
             text-align: center;
-            padding: 4rem 0;
-            color: white;
         }
 
-        header h1 {
-            font-size: 3rem;
-            font-weight: 800;
+        .hero h1 {
+            font-size: 2.75rem;
+            font-weight: 700;
             margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            letter-spacing: -1px;
         }
 
-        header p {
-            font-size: 1.25rem;
+        .hero p {
+            font-size: 1.2rem;
             opacity: 0.9;
-            max-width: 800px;
+            max-width: 700px;
             margin: 0 auto;
         }
 
+        /* Main Content */
         .main-content {
-            background: white;
-            border-radius: 20px;
-            padding: 3rem;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            margin-bottom: 2rem;
+            padding: 4rem 0;
         }
 
         .section {
+            margin-bottom: 4rem;
+        }
+
+        .section-header {
+            text-align: center;
             margin-bottom: 3rem;
         }
 
-        .section h2 {
+        .section-header h2 {
             font-size: 2rem;
-            color: #667eea;
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 3px solid #667eea;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header p {
+            color: var(--text-gray);
+            font-size: 1.1rem;
         }
 
         .section h3 {
-            font-size: 1.5rem;
-            color: #764ba2;
-            margin: 1.5rem 0 1rem;
+            font-size: 1.4rem;
+            color: var(--primary-blue);
+            margin: 2rem 0 1rem;
+            font-weight: 600;
         }
 
-        .highlight-box {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            border-left: 5px solid #667eea;
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-            border-radius: 8px;
-        }
-
-        .warning-box {
-            background: linear-gradient(135deg, #fff5f5 0%, #fed7d7 100%);
-            border-left: 5px solid #e53e3e;
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-            border-radius: 8px;
-        }
-
-        .info-box {
-            background: linear-gradient(135deg, #f0fff4 0%, #c6f6d5 100%);
-            border-left: 5px solid #38a169;
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-            border-radius: 8px;
-        }
-
-        ul, ol {
-            margin: 1rem 0;
-            padding-left: 2rem;
-        }
-
-        li {
-            margin: 0.5rem 0;
-        }
-
+        /* Cards */
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 1.5rem;
-            margin: 2rem 0;
+            margin: 3rem 0;
         }
 
         .stat-card {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            background: var(--white);
+            border: 1px solid var(--border-gray);
             padding: 2rem;
-            border-radius: 12px;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            border-color: var(--primary-blue);
+            box-shadow: 0 5px 20px rgba(0,61,130,0.1);
         }
 
         .stat-card h3 {
             font-size: 2.5rem;
+            color: var(--primary-blue);
             margin-bottom: 0.5rem;
-            color: white;
+            font-weight: 700;
         }
 
         .stat-card p {
-            opacity: 0.9;
+            color: var(--text-gray);
             font-size: 0.9rem;
         }
 
+        /* Info Boxes */
+        .highlight-box {
+            background: var(--light-blue);
+            border-left: 4px solid var(--primary-blue);
+            padding: 1.5rem 2rem;
+            margin: 1.5rem 0;
+        }
+
+        .warning-box {
+            background: #fef2f2;
+            border-left: 4px solid #dc2626;
+            padding: 1.5rem 2rem;
+            margin: 1.5rem 0;
+        }
+
+        .warning-box h3 {
+            color: #dc2626;
+        }
+
+        .info-box {
+            background: #f0fdf4;
+            border-left: 4px solid #16a34a;
+            padding: 1.5rem 2rem;
+            margin: 1.5rem 0;
+        }
+
+        .info-box h3 {
+            color: #16a34a;
+        }
+
+        ul, ol {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+
+        li {
+            margin: 0.5rem 0;
+            color: var(--text-gray);
+        }
+
+        /* Link Cards */
         .link-section {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 1.5rem;
             margin: 2rem 0;
         }
 
         .link-card {
-            background: #f8f9fa;
+            background: var(--white);
+            border: 1px solid var(--border-gray);
             padding: 1.5rem;
-            border-radius: 12px;
-            border: 2px solid #e9ecef;
             transition: all 0.3s ease;
         }
 
         .link-card:hover {
-            border-color: #667eea;
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+            border-color: var(--primary-blue);
+            box-shadow: 0 5px 20px rgba(0,61,130,0.1);
         }
 
         .link-card h4 {
-            color: #667eea;
-            margin-bottom: 0.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+        }
+
+        .link-card p {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
         }
 
         .link-card a {
-            color: #764ba2;
+            color: var(--accent-blue);
             text-decoration: none;
             font-weight: 600;
+            font-size: 0.9rem;
         }
 
         .link-card a:hover {
             text-decoration: underline;
         }
 
+        /* Timeline */
         .timeline {
             position: relative;
             padding-left: 2rem;
@@ -179,8 +277,8 @@
             left: 0;
             top: 0;
             bottom: 0;
-            width: 3px;
-            background: linear-gradient(to bottom, #667eea, #764ba2);
+            width: 2px;
+            background: var(--primary-blue);
         }
 
         .timeline-item {
@@ -192,38 +290,98 @@
         .timeline-item::before {
             content: '';
             position: absolute;
-            left: -2.4rem;
-            top: 0.5rem;
-            width: 12px;
-            height: 12px;
-            background: #667eea;
+            left: -2.35rem;
+            top: 0.4rem;
+            width: 10px;
+            height: 10px;
+            background: var(--primary-blue);
             border-radius: 50%;
-            border: 3px solid white;
-            box-shadow: 0 0 0 3px #667eea;
+            border: 2px solid var(--white);
         }
 
         .timeline-year {
-            font-weight: 800;
-            color: #667eea;
-            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
         }
 
+        .timeline-item p {
+            color: var(--text-gray);
+        }
+
+        /* Footer */
         footer {
-            text-align: center;
-            padding: 2rem;
-            color: white;
-            opacity: 0.8;
+            background: var(--bg-light);
+            border-top: 1px solid var(--border-gray);
+            padding: 3rem 0 2rem;
+            margin-top: 4rem;
         }
 
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+
+        .footer-info {
+            text-align: right;
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-gray);
+            color: var(--text-gray);
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 2rem;
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
             }
 
-            .main-content {
-                padding: 1.5rem;
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
             }
 
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .link-section {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .footer-info {
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
             .stats-grid {
                 grid-template-columns: 1fr;
             }
@@ -231,17 +389,41 @@
     </style>
 </head>
 <body>
-    <header>
+    <div class="top-header">
+        <div class="container">
+            <span>Forensische Untersuchung</span>
+            <span>Stand: April 2026</span>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <div class="container header-content">
+            <a href="#" class="logo">FORENSIK<span>ANALYSE</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#kenntnisse">Erkenntnisse</a></li>
+                    <li><a href="#technologien">Technologien</a></li>
+                    <li><a href="#timeline">Zeitstrahl</a></li>
+                    <li><a href="#personen">Personen</a></li>
+                    <li><a href="#repression">Repression</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
         <div class="container">
             <h1>Forensische Untersuchung</h1>
             <p>Systematische Analyse potenzieller Medienmanipulation und technologischer Einflussnahme auf demokratische Prozesse</p>
         </div>
-    </header>
+    </section>
 
-    <div class="container">
-        <div class="main-content">
-            <section class="section">
-                <h2>Kritische Erkenntnisse</h2>
+    <div class="container main-content">
+            <section class="section" id="kenntnisse">
+                <div class="section-header">
+                    <h2>Kritische Erkenntnisse</h2>
+                    <p>Zentrale Befunde der forensischen Analyse</p>
+                </div>
                 
                 <div class="stats-grid">
                     <div class="stat-card">
@@ -268,8 +450,11 @@
                 </div>
             </section>
 
-            <section class="section">
-                <h2>Identifizierte Technologien</h2>
+            <section class="section" id="technologien">
+                <div class="section-header">
+                    <h2>Identifizierte Technologien</h2>
+                    <p>Verwendete KI- und Medientechnologien</p>
+                </div>
                 
                 <div class="highlight-box">
                     <h3>KI-Deepfake-Technologie</h3>
@@ -285,8 +470,11 @@
                 </div>
             </section>
 
-            <section class="section">
-                <h2>Chronologische Entwicklung</h2>
+            <section class="section" id="timeline">
+                <div class="section-header">
+                    <h2>Chronologische Entwicklung</h2>
+                    <p>Zeitstrahl der Ereignisse von 2019 bis 2026</p>
+                </div>
                 
                 <div class="timeline">
                     <div class="timeline-item">
@@ -320,8 +508,11 @@
                 </div>
             </section>
 
-            <section class="section">
-                <h2>Identifizierte KI-Generierte Personen</h2>
+            <section class="section" id="personen">
+                <div class="section-header">
+                    <h2>Identifizierte KI-Generierte Personen</h2>
+                    <p>Validierte Profile und Zielgruppenanalyse</p>
+                </div>
                 
                 <h3>Politische Influencer (8 Personen)</h3>
                 <ul>
@@ -431,8 +622,11 @@
                 </div>
             </section>
 
-            <section class="section">
-                <h2>Staatliche Repression</h2>
+            <section class="section" id="repression">
+                <div class="section-header">
+                    <h2>Staatliche Repression</h2>
+                    <p>Dokumentierte Repressionsmaßnahmen gegen Whistleblower</p>
+                </div>
                 
                 <div class="warning-box">
                     <h3>⚠️ Dokumentierte Repressionsmaßnahmen</h3>
@@ -483,8 +677,19 @@
     </div>
 
     <footer>
-        <p>Forensische Untersuchung | Stand: April 2026</p>
-        <p>Diese Untersuchung basiert auf systematischer Analyse verfügbarer Evidenz und Informanteninformationen.</p>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">FORENSIK<span style="color: var(--accent-blue);">ANALYSE</span></div>
+                <div class="footer-info">
+                    <p>Forensische Untersuchung</p>
+                    <p>Stand: April 2026</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>Diese Untersuchung basiert auf systematischer Analyse verfügbarer Evidenz und Informanteninformationen.</p>
+                <p>&copy; 2026 Alle Rechte vorbehalten</p>
+            </div>
+        </div>
     </footer>
 </body>
 </html>
